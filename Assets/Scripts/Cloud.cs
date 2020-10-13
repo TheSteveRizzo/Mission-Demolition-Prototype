@@ -15,36 +15,36 @@ public class Cloud : MonoBehaviour
     
     public float scaleYMin = 2f;
     
-    private List<GameObject> spheres; // b
+    private List<GameObject> spheres;
 
     void Start()
     {
         spheres = new List<GameObject>();
         
-        int num = Random.Range(numSpheresMin, numSpheresMax); // c
+        int num = Random.Range(numSpheresMin, numSpheresMax);
 
         for (int i = 0; i < num; i++)
         {
-            GameObject sp = Instantiate<GameObject>(cloudSphere); // d
+            GameObject sp = Instantiate<GameObject>(cloudSphere);
             spheres.Add(sp);
 
             Transform spTrans = sp.transform;
             spTrans.SetParent(this.transform);
 
-            Vector3 offset = Random.insideUnitSphere; // e
+            Vector3 offset = Random.insideUnitSphere;
 
             offset.x *= sphereOffsetScale.x;
             offset.y *= sphereOffsetScale.y;
             offset.z *= sphereOffsetScale.z;
 
-            spTrans.localPosition = offset; // f
+            spTrans.localPosition = offset;
 
-            Vector3 scale = Vector3.one; // g
+            Vector3 scale = Vector3.one;
             scale.x = Random.Range(sphereScaleRangeX.x, sphereScaleRangeX.y);
             scale.y = Random.Range(sphereScaleRangeY.x, sphereScaleRangeY.y);
             scale.z = Random.Range(sphereScaleRangeZ.x, sphereScaleRangeZ.y);
             
-            scale.y *= 1 - (Mathf.Abs(offset.x) / sphereOffsetScale.x); // h
+            scale.y *= 1 - (Mathf.Abs(offset.x) / sphereOffsetScale.x);
             scale.y = Mathf.Max(scale.y, scaleYMin);
             spTrans.localScale = scale;
         }
