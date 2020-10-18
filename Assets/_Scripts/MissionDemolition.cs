@@ -14,12 +14,13 @@ public class MissionDemolition : MonoBehaviour
     [Header("Set in Inspector")] 
     public Text uitLevel;
     public Text uitShots;
+    public Text uitHighScore;
     public Text uitButton;
     public Vector3 castlePos;
     public GameObject[] castles;
 
     [Header("Set Dynamically")] 
-    public int level;
+    public static int level;
     public int levelMax;
     public int shotsTaken;
     
@@ -32,7 +33,7 @@ public class MissionDemolition : MonoBehaviour
     {
         S = this;
 
-        level = 0;
+        level = 1;
         levelMax = castles.Length;
 
         StartLevel();
@@ -51,7 +52,7 @@ public class MissionDemolition : MonoBehaviour
             Destroy(pTemp);
         }
         
-        castle = Instantiate<GameObject>(castles[level]);
+        castle = Instantiate<GameObject>(castles[level-1]);
         castle.transform.position = castlePos;
         shotsTaken = 0;
         
@@ -67,13 +68,16 @@ public class MissionDemolition : MonoBehaviour
 
     }
 
-
+    public static int GetLevel()
+    {
+        return level;
+    }
 
     void UpdateGUI()
     {
-        
-        uitLevel.text = "Level: " + (level + 1) + "of " + levelMax;
+        uitLevel.text = "Level: " + (level) + " of " + levelMax;
         uitShots.text = "Shots Taken: " + shotsTaken;
+        uitHighScore.text = "Highest Score: " + level;
 
     }
 
@@ -97,7 +101,7 @@ public class MissionDemolition : MonoBehaviour
     void NextLevel()
     {
         level++;
-        if (level == levelMax)
+        if (level > levelMax)
         {
             level = 0;
         }
