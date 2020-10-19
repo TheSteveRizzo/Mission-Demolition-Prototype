@@ -52,7 +52,7 @@ public class MissionDemolition : MonoBehaviour
             Destroy(pTemp);
         }
         
-        castle = Instantiate<GameObject>(castles[level-1]);
+        castle = Instantiate<GameObject>(castles[(level-1)]);
         castle.transform.position = castlePos;
         shotsTaken = 0;
         
@@ -103,7 +103,7 @@ public class MissionDemolition : MonoBehaviour
         level++;
         if (level > levelMax)
         {
-            level = 0;
+            level = 1;
         }
         StartLevel();
     }

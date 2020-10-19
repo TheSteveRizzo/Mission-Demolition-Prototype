@@ -24,7 +24,6 @@ public class Goal : MonoBehaviour
             mat.SetColor("_Color", Color.green);
 
             SavePlayerLevel();
-            
         }
     }
 
