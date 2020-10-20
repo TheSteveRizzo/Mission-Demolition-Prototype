@@ -12,7 +12,7 @@ public class Goal : MonoBehaviour
         {
             LoadPlayerLevel();
         }
-        SavePlayerLevel();
+        SavePlayerLevel(level);
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,7 +23,7 @@ public class Goal : MonoBehaviour
             Material mat = GetComponent<Renderer>().material;
             mat.SetColor("_Color", Color.green);
 
-            SavePlayerLevel();
+            SavePlayerLevel(level + 1);
         }
     }
 
@@ -32,15 +32,12 @@ public class Goal : MonoBehaviour
          return PlayerPrefs.GetInt("playerMaxLevel");
     }
 
-    void SavePlayerLevel()
+    void SavePlayerLevel(int newScore)
     {
-        int savedLevel = LoadPlayerLevel();
-        int nextLevel = (level + 1);
-        
-        if (savedLevel < nextLevel) 
+        if (LoadPlayerLevel() < newScore) 
         {
-            // update high score
-            PlayerPrefs.SetInt("playerMaxLevel", level+1);
+            // update high score, old score is less than new score (player beat record)
+            PlayerPrefs.SetInt("playerMaxLevel", newScore);
             PlayerPrefs.Save();
         }
     }

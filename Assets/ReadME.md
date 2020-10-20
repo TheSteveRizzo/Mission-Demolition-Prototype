@@ -30,7 +30,7 @@ Added:
 
 EC: Implement your own creative extensions for other extra credit. Make a case for why it is worth extra points. [ ]
 
-## Submission
+## Submission:
 
 - Upload a WebGL build to Unity Connect. Submit url of your submitted game to D2L Course Page > Assessments > Assignments > HW
 - Submit a screenshot of your git repository either as shown via the Git with Unity plugin or from SourceTree.
