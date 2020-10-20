@@ -6,29 +6,30 @@ MISSION DEMOLITION PROTOTYPE
 
 ### Task 1:
 
-Use GitHub Version Control [X]
+- [x] Use GitHub Version Control
 
 ### Task 2: 
 
-Implement the game, as detailed in Gibson-Bond text. [x]
+- [x] Implement the game, as detailed in Gibson-Bond text
 
 ### Task 3:
 
-Implement three of the six ideas in Gibson-Bond text. [x]
-Added: 
-- Moving buildings moving in background
-- PlayerPrefs scoreboard (max level reached)
-- Different materials, different masses, different reactions (i.e., wood destroys immediately on impact)
+- [x] Implement three of the six ideas in Gibson-Bond text
+
+  - Added: 
+    - Moving buildings moving in background
+    - PlayerPrefs scoreboard (max level reached)
+    - Different materials, different masses, different reactions (i.e., wood destroys immediately on impact)
 
 ### (OPT.) Task 4:
 
-EC: Implement more "Next Steps" for extra credit [x]
-Added:
-- Particle Effects around goal regions for each castle
+- [x] EC: Implement more "Next Steps" for extra credit
+  - Added:
+    - Particle Effects around goal regions for each castle
 
 ### (OPT.) Task 5:
 
-EC: Implement your own creative extensions for other extra credit. Make a case for why it is worth extra points. [ ]
+- [ ] EC: Implement your own creative extensions for other extra credit. Make a case for why it is worth extra points
 
 ## Submission:
 
