@@ -2,20 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Slingshot : MonoBehaviour
 {
     static private Slingshot S;
     
-    [Header("Set In Inspector:")] public GameObject prefabProjectile;
+    [Header("Set In Inspector:")] 
+    public GameObject prefabProjectile;
     public float velocityMult = 8f;
 
-    [Header("Set Dynamically")] public GameObject launchPoint;
+    [Header("Set Dynamically")]
+    public GameObject launchPoint;
     public Vector3 launchPos;
     public GameObject projectile;
     public bool aimingMode;
     private Rigidbody projectileRigidbody;
-
     
     static public Vector3 LAUNCH_POS {
         get {
